@@ -1,6 +1,6 @@
 {
   "name": "electron-test",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Dummy Electron app for demo - packages web app as desktop app",
   "main": "main.js",
   "author": "paulvan",
@@ -13,7 +13,7 @@
     "build:all": "electron-builder --mac --win"
   },
   "devDependencies": {
-    "electron": "^31.7.0",
+    "electron": "^44.1.0",
     "electron-builder": "^24.13.3"
   },
   "build": {
@@ -27,7 +27,10 @@
       "style.css"
     ],
     "mac": {
-      "target": ["dmg", "zip"],
+      "target": [
+        "dmg",
+        "zip"
+      ],
       "category": "public.app-category.utilities",
       "notarize": true,
       "hardenedRuntime": true,
@@ -36,7 +39,9 @@
       "entitlementsInherit": "build/entitlements.mac.plist"
     },
     "win": {
-      "target": ["nsis"]
+      "target": [
+        "nsis"
+      ]
     },
     "nsis": {
       "oneClick": false,

@@ -34,14 +34,15 @@ Before publishing a release, add these GitHub Actions repository secrets:
 - `APPLE_APP_SPECIFIC_PASSWORD`: app-specific password for that Apple Account
 - `APPLE_TEAM_ID`: Apple Developer Team ID
 
-The release workflow fails safely if any are missing, so it cannot publish an
-unsigned macOS installer by accident. For a temporary local unsigned build only,
-Control-click the app and select **Open**; do not rely on that for distribution.
+For temporary testing, the release workflow can build without these secrets.
+That macOS installer will be unsigned and show the normal unidentified-developer
+warning; do not use it for production distribution.
 
 ## GitHub Releases (auto build .dmg + .exe)
-This repo includes `.github/workflows/build.yml`. Once the secrets above are
-configured, push a tag such as `v0.1.0`; it builds signed/notarized macOS `.dmg`
-and `.zip` files plus a Windows installer, then attaches them to a GitHub Release.
+This repo includes `.github/workflows/build.yml`. Push a tag such as `v0.1.0`;
+it builds a macOS `.dmg` and `.zip` plus a Windows installer, then attaches them
+to a GitHub Release. If the macOS secrets are configured, the macOS artifacts are
+signed and notarized; otherwise, they are unsigned test artifacts.
 
 ## What it proves
 - UI is just `index.html` + `renderer.js` + `style.css`
