@@ -29,6 +29,7 @@
     "mac": {
       "target": ["dmg", "zip"],
       "category": "public.app-category.utilities",
+      "notarize": true,
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "entitlements": "build/entitlements.mac.plist",
