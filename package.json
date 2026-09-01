@@ -27,8 +27,12 @@
       "style.css"
     ],
     "mac": {
-      "target": ["dmg"],
-      "category": "public.app-category.utilities"
+      "target": ["dmg", "zip"],
+      "category": "public.app-category.utilities",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
     },
     "win": {
       "target": ["nsis"]
@@ -36,9 +40,6 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
-    },
-    "dmg": {
-      "sign": false
     },
     "directories": {
       "buildResources": "build"
