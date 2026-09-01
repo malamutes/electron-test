@@ -1,0 +1,47 @@
+{
+  "name": "electron-test",
+  "version": "0.1.0",
+  "description": "Dummy Electron app for demo - packages web app as desktop app",
+  "main": "main.js",
+  "author": "paulvan",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac dmg",
+    "build:win": "electron-builder --win nsis",
+    "build:all": "electron-builder --mac --win"
+  },
+  "devDependencies": {
+    "electron": "^31.7.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.paulvan.electrontest",
+    "productName": "ElectronTest",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "style.css"
+    ],
+    "mac": {
+      "target": ["dmg"],
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": ["nsis"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "dmg": {
+      "sign": false
+    },
+    "directories": {
+      "buildResources": "build"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>ElectronTest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚡️ ElectronTest</h1>
+    <p class="subtitle">Dummy Electron app — web tech running as a desktop app</p>
+
+    <div class="card">
+      <h2>It works!</h2>
+      <p>This HTML/CSS/JS is running inside Chromium + Node.js, packaged as a native app. No web server or hosting needed — files are bundled inside the <code>.app / .exe</code>.</p>
+      <div id="info">Loading app info...</div>
+    </div>
+
+    <div class="card">
+      <h3>Try it</h3>
+      <button id="ping">Ping Native Layer</button>
+      <button id="online">Check Online Status</button>
+      <p id="output"></p>
+    </div>
+
+    <div class="card small">
+      <h3>How this proves the stack</h3>
+      <ul>
+        <li>✅ UI = Normal HTML/CSS/JS (like your web app)</li>
+        <li>✅ Bundled offline — works with no internet</li>
+        <li>✅ Can still fetch APIs if internet exists</li>
+        <li>✅ Packaged to <code>.dmg</code> (Mac) and <code>.exe</code> (Windows) via electron-builder</li>
+      </ul>
+    </div>
+
+    <footer>Built with Electron v31 • Ready to propose for larger app</footer>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
